@@ -400,7 +400,11 @@ export async function runSCF(
 
     // Step 4: Compute new electron density
     const newRho = computeElectronDensity(orbitals, r);
-
+    // 🔥 ADD THIS (density difference calculation)
+    let densityDiff = 0;
+    for (let i = 0; i < N; i++) {
+      densityDiff += Math.abs(newRho[i] - rho[i]);
+    }
     // Step 5: Compute total energy
     const Ekin_orbitals = orbitals.reduce((s, orb) => s + orb.occupation * orb.energy, 0);
     const EH = hartreeEnergy(VH, rho, r, dr);
@@ -408,8 +412,8 @@ export async function runSCF(
     void nuclearEnergy(Vnuc, rho, r, dr); // computed for consistency check
 
     // Total DFT energy (sum of orbital energies minus double-counting corrections)
-    const newTotalEnergy = Ekin_orbitals - EH + _Exc - xcPotentialCorrection(Vxc, rho, r, dr);
-
+    // const newTotalEnergy = Ekin_orbitals - EH + _Exc - xcPotentialCorrection(Vxc, rho, r, dr);
+    const newTotalEnergy = Ekin_orbitals;
     const delta = Math.abs(newTotalEnergy - totalEnergy);
     totalEnergy = newTotalEnergy;
     energyHistory.push(totalEnergy);
@@ -435,7 +439,7 @@ export async function runSCF(
     }
 
     // Check convergence
-    if (scfIter > 3 && delta < convergenceTol) {
+    if (scfIter > 5 && densityDiff < 1e-4) {
       converged = true;
       break;
     }

@@ -103,7 +103,7 @@ npm run dev
 
 ## 🌐 Live Demo
 
-https://your-vercel-link.vercel.app
+https://quantum-atom-engine.vercel.app/
 
 ---
 
@@ -134,3 +134,9 @@ Inspired by quantum chemistry solvers and the need for **interactive physics too
 Kingshuk
 Computer Science Undergraduate
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/30e1d65e-3cac-433b-b2e4-eb311d169900" />
+<img width="1920" height="1080" alt="Screenshot 2026-04-29 141401" src="https://github.com/user-attachments/assets/cd1ed555-9e43-4cab-af95-f03fd1fe961d" />
+<img width="1920" height="1080" alt="Screenshot 2026-04-29 141349" src="https://github.com/user-attachments/assets/31a18ee1-976a-4e54-9dee-81fb55e17318" />
+<img width="1920" height="1080" alt="Screenshot 2026-04-29 141341" src="https://github.com/user-attachments/assets/dafc128d-3cfb-4147-8afd-ec3782c4bddd" />
+
+<img width="1920" height="1080" alt="Screenshot 2026-04-29 141349" src="https://github.com/user-attachments/assets/20ec220b-ca3d-4683-b986-2bcc5c0e06cd" />
+
